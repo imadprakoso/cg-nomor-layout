@@ -1,0 +1,60 @@
+# ======================
+# BACKEND (PYTHON)
+# ======================
+
+# Virtual environment
+backend/venv/
+backend/.venv/
+
+# Python cache
+backend/__pycache__/
+backend/**/*.pyc
+backend/**/*.pyo
+
+# Upload & output files (generated)
+backend/uploads/*
+backend/outputs/*
+backend/temp/*
+
+# Keep folder structure
+!backend/uploads/.gitkeep
+!backend/outputs/.gitkeep
+!backend/temp/.gitkeep
+
+# ======================
+# FRONTEND (NODE / VITE)
+# ======================
+
+# Dependencies
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+
+# ======================
+# ENV FILES (SENSITIVE)
+# ======================
+
+frontend/.env
+frontend/.env.production
+backend/.env
+
+# ======================
+# OS FILES
+# ======================
+
+.DS_Store
+Thumbs.db
+
+# ======================
+# LOGS
+# ======================
+
+*.log
+
+# ======================
+# IDE (optional)
+# ======================
+
+.vscode/
+.idea/
