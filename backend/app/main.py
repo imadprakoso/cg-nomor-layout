@@ -7,7 +7,7 @@ from app.routes import upload, generate, download, analyze, preview, preview_res
 
 app = FastAPI(title="Kupon Web App API")
 
-frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
+frontend_url = os.getenv("https://cg-nomor-layout.vercel.app", "http://localhost:5173")
 
 allowed_origins = [
     frontend_url,
