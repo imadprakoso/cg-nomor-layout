@@ -1,5 +1,4 @@
 import os
-
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -7,12 +6,13 @@ from app.routes import upload, generate, download, analyze, preview, preview_res
 
 app = FastAPI(title="Kupon Web App API")
 
-frontend_url = os.getenv("https://cg-nomor-layout.vercel.app", "http://localhost:5173")
+frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
 
 allowed_origins = [
     frontend_url,
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    "https://cg-nomor-layout.vercel.app",
 ]
 
 app.add_middleware(
@@ -30,8 +30,3 @@ app.include_router(download.router)
 app.include_router(analyze.router)
 app.include_router(preview.router)
 app.include_router(preview_result.router)
-
-
-@app.get("/")
-def root():
-    return {"message": "API jalan bro"}
